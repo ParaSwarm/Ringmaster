@@ -8,6 +8,11 @@ namespace Ringmaster.Models
     {
         private List<Card> Cards { get; set; }
 
+        public List<Card> GetCards()
+        {
+            return this.Cards;
+        }
+
         public static List<Deck> GenerateDecks(int numberOfDecks)
         {
             var decks = new List<Deck>();

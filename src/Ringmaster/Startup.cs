@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Ringmaster.Service;
 
 namespace Ringmaster
 {
@@ -34,6 +35,8 @@ namespace Ringmaster
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            services.AddSingleton<SuperPokerService, SuperPokerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

@@ -15,6 +15,13 @@ namespace Ringmaster.Service
             game.AddPlayer(hostName);
         }
 
+        public SuperPokerDeck GameStart()
+        {
+            // Return deck when all players are ready
+
+            return this.GetCurrentGame().GetGameDeck();
+        }
+
         private Game GetCurrentGame()
         {
             lock (Games)
